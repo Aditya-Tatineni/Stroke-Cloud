@@ -28,11 +28,11 @@ beta_schedule = 'linear'
 dim_in = 6
 gpu_num = 1
 
-# #Add WB key here
-# wand_b_key = 'Your key here'
-# wandb.login(key=wand_b_key)
-# wandb_logger = WandbLogger(name=experiment_name,project='Your Stroke Cloud')
-# trainer = Trainer(logger=wandb_logger)
+ #Add WB key here
+ wand_b_key = '449510cb209e2f01aa3d1addd4a6c8e816c02eff'
+ wandb.login(key=wand_b_key)
+ wandb_logger = WandbLogger(name=experiment_name,project='Your Stroke Cloud')
+trainer = Trainer(logger=wandb_logger)
 train_set = Tensor(train_path)
 val_set = Tensor(val_path)
 train_loader = DataLoader(train_set, BATCH_SIZE, shuffle=True, collate_fn= my_collate, pin_memory=True)
