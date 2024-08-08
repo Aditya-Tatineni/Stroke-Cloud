@@ -18,6 +18,7 @@ from pickle import UnpicklingError
 from typing import Any, Dict, Union
 
 import jax
+from jax import random
 import jax.numpy as jnp
 import msgpack.exceptions
 from flax.core.frozen_dict import FrozenDict, unfreeze
