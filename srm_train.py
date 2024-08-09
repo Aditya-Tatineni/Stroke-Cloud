@@ -87,3 +87,4 @@ trainer = L.Trainer(
     benchmark=True
 )
 trainer.fit(model=srm, train_dataloaders=train_loader, val_dataloaders=val_loader)
+
