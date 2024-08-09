@@ -23,7 +23,7 @@ samples = 1000
 steps = 4000
 sample_steps = 25
 beta_schedule = 'scaled_linear'
-wand_b_key = 'Your Key Here'
+wand_b_key = '449510cb209e2f01aa3d1addd4a6c8e816c02eff'
 gpu_num = 1
 wandb.login(key=wand_b_key)
 wandb_logger = WandbLogger(name=experiment_name,project='Your Latent Stroke Cloud')
@@ -58,7 +58,7 @@ if not os.path.exists("Results/{}".format(experiment_name)):
 if not os.path.exists("Models/{}".format(experiment_name)):
         os.makedirs("Models/{}".format(experiment_name))
 
-trainer = L.Trainer(accelerator='gpu', devices=gpu_num, strategy='auto' ,logger=wandb_logger, max_epochs= 5000000,
+trainer = L.Trainer(accelerator='gpu', devices=gpu_num, strategy='auto' ,logger=wandb_logger, max_epochs= 10,
                     check_val_every_n_epoch=200, enable_progress_bar=True, profiler="simple",
                     callbacks=[StochasticWeightAveraging(swa_lrs=learning_rate),checkpoint_callback, lr_monitor], benchmark=True)
 trainer.fit(model=lsg, train_dataloaders=train_loader, val_dataloaders=train_loader)
