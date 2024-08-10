@@ -20,14 +20,14 @@ dim_in = 6
 # Modify the number of samples for testing purposes
 # Original:
 # samples = 1000
-samples = 100  # Reduced number of samples for quicker testing
+samples = 10 # Reduced number of samples for quicker testing
 
 L = []
 
 # Modify the number of repetitions for testing purposes
 # Original:
 # reps = 1
-reps = 1  # Keeping it to 1, but can reduce further to 0 if needed for initial debugging
+reps = 0 # Keeping it to 1, but can reduce further to 0 if needed for initial debugging
 
 # Ensure the output directory exists
 if not os.path.exists("Samples/{}".format(experiment_name)):
