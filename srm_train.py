@@ -73,7 +73,7 @@ sample_steps = list(range(sample_steps))
 srm = srm(encoder, decoder, scheduler, ddim_s, experiment_name, samples, sample_steps, format_path, size,dim_in, learning_rate)
 
 
-trainer = L.Trainer(accelerator='gpu', devices=gpu_num, strategy='auto' ,logger=wandb_logger, max_epochs= 10,
+trainer = L.Trainer(accelerator='gpu', devices=gpu_num, strategy='auto' ,logger=wandb_logger, max_epochs= 1,
                     check_val_every_n_epoch=100, enable_progress_bar=True, profiler="simple",
                     callbacks=[StochasticWeightAveraging(swa_lrs=learning_rate),checkpoint_callback ], benchmark=True)
 trainer.fit(model=srm, train_dataloaders=train_loader, val_dataloaders= val_loader)
